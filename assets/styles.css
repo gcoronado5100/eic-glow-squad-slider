@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+:root {
+    --e-global-color-primary: #B29784;
+    --e-global-color-text: #444444;
+}
+
+#glowSquadSlider {
+    position: relative;
+    padding: 3rem;
+    overflow: hidden;
+}
+
+.swiper-eic-slider {
+    margin: 1.5rem auto;
+}
+
+.swiper-slide {
+    width: 100%;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: 35% auto;
+    gap: 2rem;
+    min-height: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.slide .img-box {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    max-height: inherit;
+}
+
+.slide .img-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slide .info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0 2rem;
+}
+
+.slide .info-box .slide-title {
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.slide .info-box .slide-title .position-title {
+    font-family: "Mazzard Light", Sans-serif;
+    font-weight: 400;
+    color: #B29784 !important;
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.3;
+}
+
+.slide .info-box p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+
+.all-locations-active #glow-prev-slide,
+.all-locations-active #glow-next-slide,
+.tempe-active #tempe-prev-slide,
+.tempe-active #tempe-next-slide {
+    display: block;
+}
+
+.row-nav-pos ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.row-nav-pos ul li {
+    background: #F2EFEC;
+    width: 25%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-nav-pos ul li i {
+    margin-right: 10px;
+}
+
+.row-nav-pos ul li:hover,
+.row-nav-pos ul li.active-location {
+    background: #444444;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .slide {
+        grid-template-columns: 1fr;
+    }
+
+    .slide .img-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slide .img-box img {
+        max-height: 350px;
+        max-width: 300px;
+        object-fit: contain;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 1024px) {
+    .slide .info-box p {
+        font-size: .95rem;
+    }
+}
