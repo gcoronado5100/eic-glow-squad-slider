@@ -3,13 +3,15 @@ const allLocationsSelector = document.querySelectorAll('.row-nav-pos ul li');
 const allSlides = document.querySelectorAll('.swiper-slide')
 let LocationScope = 'allLocations'
 
-const slideSelecting = () => {
-  if (LocationScope !== 'allLocations' ){
-  allSlides.forEach( slide => slide.style.display = 'none')
-  allSlides.forEach(slide => ( slide.classList.contains(`${LocationScope}`) ? slide.style.display ='block' : '') )
-  }else {
-    allSlides.forEach( slide => slide.style.display = 'block')
-  }
+// Initialize the slider
+const allSlidersEIC = document.querySelectorAll('.swiper-eic-slider')
+allSlidersEIC.forEach( slider => {
+  (slider.id === 'swiper_allLocations') ? console.log('paso') :  slider.style.display = 'none' } )
+
+const sliderSelecting = () => {
+ allSlidersEIC.forEach(slider => { 
+  (LocationScope === slider.id.replace( 'swiper_' , '')) ? (slider.style.display = 'block')  : slider.style.display = 'none'
+ })
 }
 
 allLocationsSelector.forEach( item => {
@@ -17,7 +19,7 @@ allLocationsSelector.forEach( item => {
     document.querySelector('.active-location').classList.remove('active-location')
     e.target.classList.add('active-location')
     LocationScope = e.target.id
-    slideSelecting()
+    sliderSelecting()
   })
 })
 
